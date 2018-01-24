@@ -1,0 +1,2 @@
+ENTITY_DIR=./config/entity/
+MAP_DIR=./config/map/
