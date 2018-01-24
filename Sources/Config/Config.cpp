@@ -1,5 +1,11 @@
 #include "Config.hh"
+
 #include <iostream>
+
+std::pair<std::string, std::string> Config::split(std::string const &s)
+{
+  std::pair<std::string, std::string> ret;
+}
 
 Config::Config()
 {
@@ -10,7 +16,16 @@ Config::Config()
 
   while (std::getline(fs, s)) { _tfile.push_back(s); }
   for (auto elem : _tfile){
-    std::cout << elem << std::endl;
+
+    std::istringstream iss(elem);
+
+    do {
+      std::string subs;
+      iss >> subs;
+      std::cout << "start" << std::endl;
+      std::cout << subs << std::endl;
+      std::cout << "endl" << std::endl;
+    } while (iss);
   }
   fs.close();
 }
