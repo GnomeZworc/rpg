@@ -5,17 +5,20 @@
 # include <string>
 # include <vector>
 # include <sstream>
+# include <map>
 
 class Config
 {
   const std::string _cfile = "./config/config.txt";
-  std::vector<std::string> _tfile;
+  std::map<std::string, std::string> _cmap;
 
-  std::pair split(std::string);
+  std::pair<std::string, std::string> split(std::string &);
 
 public:
   Config();
   ~Config();
+
+  std::string const & getElem(std::string const &);
 };
 
 #endif //!__CONFIG_HH__

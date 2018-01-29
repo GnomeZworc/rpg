@@ -2,35 +2,40 @@
 
 #include <iostream>
 
-std::pair<std::string, std::string> Config::split(std::string const &s)
-{
-  std::pair<std::string, std::string> ret;
+std::pair<std::string, std::string> Config::split(std::string &s) {
+  std::string first;
+  std::string second;
+
+  for (auto & elem : s){
+    if (elem == '='){
+      elem = ' ';
+    }
+  }
+
+  std::istringstream iss(s);
+  iss >> first;
+  iss >> second;
+
+  std::pair<std::string, std::string> ret(first, second);
+  return ret;
 }
 
-Config::Config()
-{
+Config::Config() {
   std::fstream fs;
   std::string s;
 
   fs.open(_cfile.c_str(), std::ios::in);
 
-  while (std::getline(fs, s)) { _tfile.push_back(s); }
-  for (auto elem : _tfile){
-
-    std::istringstream iss(elem);
-
-    do {
-      std::string subs;
-      iss >> subs;
-      std::cout << "start" << std::endl;
-      std::cout << subs << std::endl;
-      std::cout << "endl" << std::endl;
-    } while (iss);
+  while (std::getline(fs, s)) {
+    _cmap.insert(this->split(s));
   }
   fs.close();
 }
 
-Config::~Config()
-{
+Config::~Config() {
 
+}
+
+std::string const & Config::getElem(std::string const & focus) {
+  return (this->_cmap[focus]);
 }
