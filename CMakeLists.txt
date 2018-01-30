@@ -7,7 +7,8 @@ set (CMAKE_CXX_STANDARD 11)
 
 set(sources
   Sources/main.cpp
-  Sources/Config/Config.cpp)
+  Sources/Config/Config.cpp
+  Sources/Gestion/Gestion.cpp)
 
 add_executable(RPG
   ${sources})
