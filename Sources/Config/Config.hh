@@ -1,10 +1,7 @@
 #ifndef __CONFIG_HH__
 # define __CONFIG_HH__
 
-# include <fstream>
 # include <string>
-# include <vector>
-# include <sstream>
 # include <map>
 
 class Config
