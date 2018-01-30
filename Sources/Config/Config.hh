@@ -12,8 +12,6 @@ class Config
   const std::string _cfile = "./config/config.txt";
   std::map<std::string, std::string> _cmap;
 
-  std::pair<std::string, std::string> split(std::string &);
-
 public:
   Config();
   ~Config();
