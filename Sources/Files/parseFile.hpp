@@ -5,6 +5,7 @@
 # include <string>
 # include <fstream>
 # include <sstream>
+# include "./readFiles.hpp"
 
 class parseFile{
   parseFile() {}
@@ -15,27 +16,26 @@ public:
     std::fstream fs;
     std::string s;
 
-    fs.open(file.c_str(), std::ios::in);
+    auto tfile = readFiles::read(file);
 
     std::map<std::string, std::string>  map;
 
-    while (std::getline(fs, s)) {
+    for (auto line : tfile) {
       std::string first;
       std::string second;
 
-      for (auto & elem : s){
+      for (auto & elem : line){
         if (elem == '='){
           elem = ' ';
         }
       }
 
-      std::istringstream iss(s);
+      std::istringstream iss(line);
       iss >> first;
       iss >> second;
 
       map[first] = second;
     }
-    fs.close();
     return map;
   }
 };
