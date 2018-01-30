@@ -5,7 +5,7 @@
 # include <string>
 # include <fstream>
 # include <sstream>
-# include "./readFiles.hpp"
+# include "readFiles.hpp"
 
 class parseFile{
   parseFile() {}

@@ -1,5 +1,5 @@
 #include "Config.hh"
-#include "../Files/parseFile.hpp"
+#include "parseFile.hpp"
 
 Config::Config() {
   _cmap = parseFile::parse(_cfile.c_str());

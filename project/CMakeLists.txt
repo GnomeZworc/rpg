@@ -4,10 +4,17 @@ project (RPG)
 
 set (EXECUTABLE_OUTPUT_PATH "../Game/")
 
+include_directories(
+  Sources/Config
+  Sources/Files
+  Sources/Gestion
+)
+
 set(sources
   Sources/main.cpp
   Sources/Config/Config.cpp
-  Sources/Gestion/Gestion.cpp)
+  Sources/Gestion/Gestion.cpp
+  )
 
 add_executable(RPG
   ${sources})
