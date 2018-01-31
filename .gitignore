@@ -9,3 +9,4 @@ compile_commands.json
 CTestTestfile.cmake
 RPG
 gtest
+unit_test
