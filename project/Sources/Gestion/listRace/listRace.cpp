@@ -16,8 +16,8 @@ void listRace::setSource(std::string const &elem) {
 }
 
 void listRace::work() {
-  _listRace = readFiles::read(_source);
-  for (auto & elem : _listRace){
+  _listRaceFiles = readFiles::read(_source);
+  for (auto & elem : _listRaceFiles){
     std::string tmp = "./data/race/";
     tmp += elem;
     tmp += ".txt";

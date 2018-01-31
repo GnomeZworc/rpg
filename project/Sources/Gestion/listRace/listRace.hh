@@ -9,7 +9,7 @@ class listRace
   std::string const _id = "RACES";
   std::string _source;
 
-  std::vector<std::string> _listRace;
+  std::vector<std::string> _listRaceFiles;
 
 public:
   listRace();
