@@ -1,2 +1,4 @@
 ID=0
 NAME=human
+PICTURE=./data/asset/human.png
+HISTORY=./data/asset/human.txt

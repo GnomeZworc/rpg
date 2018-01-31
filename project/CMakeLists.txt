@@ -16,6 +16,7 @@ set(sources
   Sources/Config/Config.cpp
   Sources/Gestion/Gestion.cpp
   Sources/Gestion/listRace/listRace.cpp
+  Sources/Gestion/listRace/Race.cpp
   )
 
 add_executable(RPG

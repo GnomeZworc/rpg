@@ -7,9 +7,9 @@
 # include <sstream>
 # include "readFiles.hpp"
 
-class parseFile{
-  parseFile() {}
-  ~parseFile() {}
+class parseFiles{
+  parseFiles() {}
+  ~parseFiles() {}
 
 public:
   static std::map<std::string, std::string> parse(std::string const &file){

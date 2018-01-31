@@ -1,5 +1,6 @@
 #include "listRace.hh"
 #include "readFiles.hpp"
+#include "parseFiles.hpp"
 
 #include <iostream>
 
@@ -22,6 +23,9 @@ void listRace::work() {
     tmp += elem;
     tmp += ".txt";
     elem = tmp;
+    auto race = parseFiles::parse(elem);
+    Race c_race(race);
+    _listRace[c_race.getId()] = c_race;
   }
 }
 
